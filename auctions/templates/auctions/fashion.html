@@ -1,0 +1,26 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}	
+    <div class="listings">
+		<h2>All Listings in "fashion" Cetegory</h2>
+        {% for listing in listings %}
+		<div>
+			<div class="image-container">
+				<img src="{{ listing.image_URL }}" class="listing-img">
+			</div>
+			<h4>
+				{{ listing.title }}
+			</h4>
+			<div>
+				{{ listing.description }}
+			</div>
+			 <div class="bid-box">
+				<p><b>Starting bid: ${{ listing.starting_bid }}</b></p>
+				<p><b>Current bid: ${{ listing.current_bid }}</b></p>
+			 </div>
+			 
+			<a href="{% url 'auctions:title' listing.title %}" class="btn btn-primary">view details</a>
+		</div>
+        {% endfor %}		
+    </div>
+{% endblock %}

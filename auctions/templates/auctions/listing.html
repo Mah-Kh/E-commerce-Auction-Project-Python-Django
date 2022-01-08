@@ -1,0 +1,108 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+{% if winner %}
+	<div class="alert alert-success">
+		<p>Congratulations {{ winner |title }}! You have won this auction.</p>
+	</div>
+{% endif %}
+
+{% if warning %}
+	<div class="alert alert-warning">
+		<p>{{ warning }}</p>
+	</div>
+{% endif %}
+
+<div class="prodct">
+	<h2>{{ listing.title }}</h2>
+	<div class="details">
+		<img src="{{ listing.image_URL }}" class="listing-img">
+		<ul>
+			<li><b>Auction by:</b> {{ listing.user |title }}</li>
+			<li><b>Title:</b> {{ listing.title }}</li>
+			<li><b>Description:</b> {{ listing.description }}</li>
+			<li><b>category:</b> {{ listing.category }}</li>
+		</ul>
+	</div>
+	
+	<div class="bid">
+		{% if non_owner %}
+		<div class="watchlist">
+			<form action="" method="post" class="field">
+				{% csrf_token %}	
+				<input class="btn btn-primary" type="submit" name="watchlist" value="Add to watchlist"/>
+			</form>
+		</div>
+		{% endif %}
+		
+		{% if winner %}
+		<div class="watchlist">
+			<form action="" method="post" class="field">
+				{% csrf_token %}	
+				<input class="btn btn-primary" type="submit" name="watchlist" value="Add to watchlist"/>
+			</form>
+		</div>
+		{% endif %}
+		
+		{% if owner %}
+			<div class="end-auction">
+					<form action="" method="post" class="field">
+					{% csrf_token %}	
+					<input class="btn btn-danger" type="submit" name="endlist" value="end auction"/>
+				</form>
+			</div>
+
+			<div class="remove_item">
+				<a href="{% url 'auctions:deletelisting' listing.id %}" class="btn btn-success">remove from listing</a>
+			</div>
+			
+		{% endif %}
+		
+		
+		
+		<div class="start-bid">
+			<h2>Starting bid: ${{ listing.starting_bid }} </h2>
+		</div>
+		
+		<div class="current-bid">
+			<h2>Current bid: ${{ listing.current_bid }} </h2>
+		</div>
+		
+		
+
+
+		<div class="bid-form">
+			<h4>Bid on the item!</h4>
+			<form action="" method="post" class="field">
+				{% csrf_token %}
+				{{ bid_form }}
+				<input class="btn btn-primary" type="submit" name="bid" value="Bid"/>
+			</form>
+		</div>
+		
+		<div class="add-comment">
+			<h4>Write your comment</h4>
+			<form action="" method="post" class="field">
+			{% csrf_token %}
+			{{ form }}
+			<input class="btn btn-primary" type="submit" name="new_comment"/>
+			</form>
+		</div>
+	</div>	
+</div>
+
+<div class="comment">	
+	<h4>Comments</h4>		
+	<div class="comments">
+		{% for comment in comments %}
+			<div class="comment">
+				<b>{{ comment.user | title}}:</b> "{{ comment.comment }}"
+			</div>
+		
+		{% endfor %}
+	</div>
+</div>
+
+
+{% endblock %}

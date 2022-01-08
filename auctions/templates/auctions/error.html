@@ -1,0 +1,25 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %}
+error
+{% endblock %}
+
+{% block body %}
+
+	{% if warning_login %}
+		<div class="alert alert-warning">
+			<p>{{ warning }}</p>
+		</div>
+	{% endif %}
+
+	{% if warning %}
+		<div class="alert alert-warning">
+			<p>{{ warning }}</p>
+		</div>
+	{% endif %}
+		
+    <div class="my-container">
+		<p>{{ error }}</p>
+    </div>
+
+{% endblock %}

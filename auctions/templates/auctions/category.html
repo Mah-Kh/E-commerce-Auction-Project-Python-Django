@@ -1,0 +1,14 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+<div class="my-container category">
+	<h2>Select Category</h2>
+	<a href="{% url 'auctions:fashion' %}" class="btn btn-info">Fashion</a>
+	<a href="{% url 'auctions:toys' %}" class="btn btn-info">Toys</a>
+	<a href="{% url 'auctions:electronics' %}" class="btn btn-info">Electronics</a>
+	<a href="{% url 'auctions:home' %}" class="btn btn-info">Home</a>
+	<a href="{% url 'auctions:uncategorized' %}" class="btn btn-info">Uncategorized</a>
+</div>
+
+{% endblock %}
