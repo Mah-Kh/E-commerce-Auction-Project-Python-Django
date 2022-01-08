@@ -1,0 +1,137 @@
+body {
+    padding: 10px;
+}
+
+.nav {
+    justify-content: space-between;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.prodct, .listings, .my-container {
+	max-width: 1250px;
+	margin: 40px auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+.prodct h2, .listings h2, .my-container h2, .my-form {
+	width: 100%;
+}
+.details, .bid{
+	width: 50%;
+	margin: 15px auto;
+}
+.bid {
+    padding-left: 20px;
+}
+.details ul {
+	margin: 20px auto;
+    border: 1px solid #eee;
+    padding: 20px;
+    list-style: none;
+}
+.details ul li {
+	padding: 7px 0;
+}
+img {
+    text-indent: -10000px
+}
+.listing-img {
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/300px-No_image_available.svg.png");
+	width: 300px;
+	height: 300px;
+	    object-fit: cover;
+}
+.start-bid, .current-bid {
+    background: gray;
+    padding: 10px;
+    color: #fff;
+    margin: 20px 0;
+}
+.current-bid {
+    background: green;
+}
+.bid-form {
+	display: flex;
+	margin: 20px auto;
+}
+.bid-form h4{
+	width: 30%;
+}
+.bid-form form{
+	width: 70%;
+}
+.bid-form label, .comment form label {
+	display: none;
+}
+.watchlist {
+	text-align: right;
+}
+.comment {
+    max-width: 1250px;
+	margin: 10px auto;
+    padding: 10px;
+}
+.comments {
+	border: 1px solid #eee;
+    min-height: 180px;
+    height: auto;
+    margin: 40px auto;
+}
+.comment form {
+    margin-bottom: 60px;
+}
+.comment form textarea{
+	width: 100%;
+	border: 1px solid #eee;
+    min-height: 180px;
+    height: auto;
+    margin: 20px auto;
+}
+.listings > div {
+	width: 50%;
+	padding: 30px;
+	border: 1px solid #eee;
+}
+.listings h4 {
+	text-transform: uppercase;
+	padding: 20px 0;
+}
+.image-container {
+	width: 100%;
+	text-align: center;
+}
+.bid-box p {
+	margin: 10px 0;
+}
+.add-comment form label {
+	display: none;	
+}
+.add-comment form textarea {
+	width: 100%;
+	border: 1px solid #eee;
+}
+.category a {
+	margin: 20px 10px;
+    width: 150px;
+}
+.create-form {
+	width: 50%;
+	padding: 20px;
+	margin: 20px 0;
+	border: 1px solid #eee;
+}
+.create-form label, .create-form input, .create-form select, .create-form textarea{
+	width: 100%;
+}
+.create-form input[type=submit], .add-comment form input[type=submit]{
+	width: auto;
+	margin: 20px 0;
+}
+.create-form label{
+	margin-top: 15px;
+}
+.end-auction, .remove_item {
+    margin: 10px 0;
+}
+ 
